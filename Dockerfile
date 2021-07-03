@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:20.10
 
 RUN apt-get update -y && apt-get upgrade -y && \
    apt-get update && apt-get install wget -y && apt-get install openjdk-8-jdk-headless -y && apt-get install wget -y && \
