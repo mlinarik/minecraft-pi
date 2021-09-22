@@ -11,7 +11,6 @@ RUN wget -c https://papermc.io/api/v2/projects/paper/versions/1.17.1/builds/266/
    touch /temp/eula.txt && echo "eula=true" > /temp/eula.txt
 
 #Runtime
-#FROM openjdk:17-jdk-slim-buster
 FROM openjdk:17-jdk-slim
 
 RUN apt-get update -y && \ 
