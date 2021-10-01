@@ -13,9 +13,9 @@ RUN wget -c https://papermc.io/api/v2/projects/paper/versions/1.17.1/builds/293/
 #Build process 2
 FROM openjdk:17-jdk-slim-buster as builder2
 
-RUN yum update -y && \
-   yum upgrade -y && \
-   yum clear all && \
+RUN apt-get update -y && \
+   apt-get upgrade -y && \
+   apt-get clean all && \
    mkdir /temp && \
    mkdir /mcdata
 
