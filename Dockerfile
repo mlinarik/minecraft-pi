@@ -25,6 +25,4 @@ WORKDIR /mcdata
 
 EXPOSE 25565
 
-USER 1001
-
 CMD mv /temp/*.* /mcdata && java -Xms4G -jar server.jar nogui
