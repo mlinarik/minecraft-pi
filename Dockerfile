@@ -13,10 +13,7 @@ RUN wget -c https://papermc.io/api/v2/projects/paper/versions/1.17.1/builds/293/
 #Build process 2
 FROM openjdk:17-ea-22-jdk-oracle as builder2
 
-RUN apt-get update -y && \
-   apt-get upgrade -y && \
-   apt-get clean && \
-   mkdir /temp && \
+RUN   mkdir /temp && \
    mkdir /mcdata
 
 COPY --from=builder /temp /temp
