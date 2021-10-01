@@ -11,7 +11,7 @@ RUN wget -c https://papermc.io/api/v2/projects/paper/versions/1.17.1/builds/293/
    touch /temp/eula.txt && echo "eula=true" > /temp/eula.txt
 
 #Build process 2
-FROM openjdk:17-jdk-slim as builder2
+FROM openjdk:17-ea-22-jdk-oracle as builder2
 
 RUN apt-get update -y && \
    apt-get upgrade -y && \
