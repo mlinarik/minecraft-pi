@@ -13,7 +13,9 @@ RUN wget -c https://papermc.io/api/v2/projects/paper/versions/1.17.1/builds/293/
 #Build process 2
 FROM openjdk:17-jdk-slim as builder2
 
-RUN apt-get update -y && \ 
+RUN apt-get update -y && \
+   apt-get upgrade -y && \
+   apt-get clean && \
    mkdir /temp && \
    mkdir /mcdata
 
@@ -22,9 +24,6 @@ COPY --from=builder /temp /temp
 WORKDIR /mcdata
 
 EXPOSE 25565
-
-#runtime
-FROM builder2
 
 USER 1001
 
