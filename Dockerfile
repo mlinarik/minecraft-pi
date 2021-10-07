@@ -21,7 +21,7 @@ RUN apt-get update -y && \
 
 COPY --from=builder /temp /temp
 
-RUN chown -R 1001 /workdir
+RUN chown -R 1001 /mcdata
 
 WORKDIR /mcdata
 
