@@ -1,4 +1,3 @@
-
 #Parent Image
 FROM openjdk:17-jdk-slim-buster as base
 
