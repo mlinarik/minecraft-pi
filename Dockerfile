@@ -5,7 +5,7 @@ FROM openjdk:17-jdk-slim-buster as base
 FROM base as paper-builder
 
 RUN apt-get update -y && apt-get install wget -y && \
-   mkdir /mcdata && mkdir /temp  && /plugins \
+   mkdir /mcdata && mkdir /temp  && mkdir /plugins \
    wget -c https://papermc.io/api/v2/projects/paper/versions/1.17.1/builds/399/downloads/paper-1.17.1-399.jar -O /temp/server.jar && \
    touch /temp/eula.txt && echo "eula=true" > /temp/eula.txt
 
