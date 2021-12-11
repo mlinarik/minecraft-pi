@@ -24,8 +24,8 @@ RUN apt-get update -y && \
    mkdir /mcdata && \
    mkdir /mcdata/plugins
 
-COPY --from=paper-builder /temp /temp && \
-   --from=paper-builder /plugins /mcdata/plugins
+COPY --from=paper-builder /temp /temp
+COPY --from=paper-builder /plugins /mcdata/plugins
 
 WORKDIR /mcdata
 
