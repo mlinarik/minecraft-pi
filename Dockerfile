@@ -11,7 +11,7 @@ RUN apt-get update -y && apt-get install wget -y && \
 
 COPY plugins.sh /plugins
 
-RUN cd /plugins && ./plugins.sh && chmod +x plugins.sh
+RUN cd /plugins && ./plugins.sh && chmod +x /plugins.sh
 
 #Build process 2
 FROM openjdk:18-jdk-slim-buster as runtime
