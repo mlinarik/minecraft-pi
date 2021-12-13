@@ -14,15 +14,17 @@ COPY plugins.sh /plugins
 #RUN cd /plugins && chmod +x /plugins.sh && ./plugins.sh
 RUN cd /plugins && ./plugins.sh
 
-#Build process 2
-FROM openjdk:18-jdk-slim-buster as runtime
+#Runtime
+FROM openjdk:17-jdk-slim-buster as runtime
 
 RUN apt-get update -y && \
    apt-get upgrade -y && \
    apt-get clean all && \
    mkdir /temp && \
    mkdir /mcdata && \
-   mkdir /mcdata/plugins
+   mkdir /mcdata/plugins && \
+   chown 11000 /mcdata && \
+   chown 11000 /temp
 
 COPY --from=paper-builder /temp /temp
 COPY --from=paper-builder /plugins /mcdata/plugins
