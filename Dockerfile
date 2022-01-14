@@ -1,5 +1,5 @@
 #Parent Image
-FROM openjdk:17-jdk-slim-buster as base
+FROM openjdk:latest as base
 
 #Builder
 FROM base as paper-builder
@@ -15,7 +15,7 @@ COPY plugins.sh /plugins
 RUN cd /plugins && ./plugins.sh
 
 #Runtime
-FROM openjdk:17-jdk-slim-buster as runtime
+FROM openjdk:latest as runtime
 
 RUN apt-get update -y && \
    apt-get upgrade -y && \
